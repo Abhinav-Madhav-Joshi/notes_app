@@ -42,7 +42,7 @@ export const Home = () =>{
                         <input value={title} onChange={onTitleChange} placeholder="Enter Title" className="title-input"/>
                         <div style={{display:"flex",position:"relative"}}>
                             <textarea value={text} onChange={onTextChange} placeholder="Enter Text" className="text-input"/>    
-                            <button disabled={title.length==0 || text.length===0} onClick={onButtonClick} className="add-button button-hover">
+                            <button disabled={title.length===0 || text.length===0} onClick={onButtonClick} className="add-button button-hover">
                                 <span class="material-icons-outlined check-icon" style={{fontSize:"3cap"}}>check_circle</span>
                             </button>
                         </div>            
