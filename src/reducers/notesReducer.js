@@ -27,6 +27,9 @@ export const notesReducer = (state,{type,payload}) => {
             return {...state, notes:state.notes.map(note => note.id==payload?{...note, isPinned:false, isArchived:false, isStarred:!note.isStarred}:note)}   
             
         case "DELETE":
-            return {...state, notes:state.notes.filter(note => note.id!==payload)}        
+            return {...state, notes:state.notes.filter(note => note.id!==payload)}   
+            
+        default:
+            return state;
     }
 }
