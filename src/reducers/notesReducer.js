@@ -15,16 +15,16 @@ export const notesReducer = (state,{type,payload}) => {
             return {...state, title:'', text:''}
 
         case "PIN":
-            return {...state, notes:state.notes.map(note => note.id==payload?{...note, isPinned: !note.isPinned}:note)}
+            return {...state, notes:state.notes.map(note => note.id===payload?{...note, isPinned: !note.isPinned}:note)}
 
         case "ARCHIVE":
-            return {...state, notes:state.notes.map(note => note.id==payload?{...note, isPinned: false, isArchived: !note.isArchived}:note)}
+            return {...state, notes:state.notes.map(note => note.id===payload?{...note, isPinned: false, isArchived: !note.isArchived}:note)}
 
         case "BIN":
-            return {...state, notes:state.notes.map(note => note.id==payload?{...note, isPinned:false, isArchived:false, isStarred:false, inBin:!note.inBin}:note)}
+            return {...state, notes:state.notes.map(note => note.id===payload?{...note, isPinned:false, isArchived:false, isStarred:false, inBin:!note.inBin}:note)}
 
         case "STAR":
-            return {...state, notes:state.notes.map(note => note.id==payload?{...note, isPinned:false, isArchived:false, isStarred:!note.isStarred}:note)}   
+            return {...state, notes:state.notes.map(note => note.id===payload?{...note, isPinned:false, isArchived:false, isStarred:!note.isStarred}:note)}   
             
         case "DELETE":
             return {...state, notes:state.notes.filter(note => note.id!==payload)}   
